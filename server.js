@@ -1,5 +1,5 @@
 //setting up imports and dependencies
-
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -40,7 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+app.use(routes); //tell express to use routes in controllers folder
 
 //sequelize sync on server start up and listen
 sequelize.sync({ force: false }).then(() => {
