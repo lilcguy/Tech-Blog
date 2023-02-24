@@ -13,12 +13,19 @@ Post.init(
             autoIncrement: true,
         },
         title: {
+            type: DataTypes.STRING,
+            allowNull: false,
 
         },
         contents: {
+            type: DataTypes.TEXT,
+            allowNull: false,
 
         },
         date: {
+            tpye: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
 
         },
         user_id: { //could be username instead?
