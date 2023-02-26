@@ -1,7 +1,8 @@
 //puts data in database
 
 const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const User = require('../models/User');
+const Post = require('./../models/Post');
 
 const userData = require('./userData.json');
 const postData = require('./postData.json');
