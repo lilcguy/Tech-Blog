@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers }); //handlebars engine custom helpers
 const sess = { //session
     secret: 'Super secret secret',
     cookie: {
-      maxAge: 300000,
+      maxAge: 300000, // 5 minutes
       httpOnly: true,
       secure: false,
       sameSite: 'strict',
