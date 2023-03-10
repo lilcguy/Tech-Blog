@@ -1,1 +1,12 @@
 <h1>DASHBOARD</h1>
+
+<h1>Hello, {{name}}!</h1>
+
+<h1>Your posts:</h1>
+
+{{#each posts as |post|}}
+    <a href="/post/{{post.id}}">{{post.title}}</a>
+    <h1>Created on: {{format_date post.date}}</h1>
+    <h1>{{post.title}}</h1>
+    <h1>{{post.contents}}</h1>
+{{/each}}
