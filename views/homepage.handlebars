@@ -1,6 +1,7 @@
 <h1>HOMEPAGE</h1>
 
 {{#each posts as |post|}}
+<h1>Created on: {{format_date post.date}}</h1>
 <a href="/post/{{post.id}}">{{post.title}}</a>
     <h1>{{post.user.name}}</h1>
     <h1>{{post.title}}</h1>
