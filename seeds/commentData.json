@@ -1,0 +1,23 @@
+[
+    {
+        "contents": "Bad",
+        "user_id": "1",
+        "post_id": "1"
+
+
+    },
+    {
+        "contents": "Good",
+        "user_id": "2",
+        "post_id": "1"
+
+
+    },
+    {
+        "contents": "Average at best",
+        "user_id": "3",
+        "post_id": "1"
+
+
+    }
+]

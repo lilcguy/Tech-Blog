@@ -1,5 +1,5 @@
 const router = require('express').Router(); //route: '/' 
-const { Post, User } = require('../models'); //models
+const { Post, User, Comment} = require('../models'); //models
 const withAuth = require('../utils/auth'); //helper
 
 //get all posts
@@ -10,6 +10,9 @@ router.get('/', (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment
+        }
       ],
     })
       .then((postData) => {
