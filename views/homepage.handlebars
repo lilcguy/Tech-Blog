@@ -6,7 +6,9 @@
     <h1>{{post.title}}</h1>
     <h1>{{post.contents}}</h1>
     <h1>Comments</h1>
-    <h2>{{post.comment.contents}}</h2>
+        {{#each post.comments}}
+        <h2>{{this.contents}}</h2>
+        {{/each}}
 {{/each}} 
 
 <!-- a post needs an anchor with a link to its route-->

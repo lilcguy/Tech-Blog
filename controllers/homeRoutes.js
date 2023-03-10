@@ -4,17 +4,7 @@ const withAuth = require('../utils/auth'); //helper
 
 //get all posts
 router.get('/', (req, res) => {
-    Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Comment
-        }
-      ],
-    })
+    Post.findAll({include: {all: true}})
       .then((postData) => {
         const posts = postData.map((post) => post.get({ plain: true }));
         res.render('homepage', {
