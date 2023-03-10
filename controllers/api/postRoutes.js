@@ -3,17 +3,18 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 const Post = require('../../models/Post');
+const Comment = require('../../models/Comment'); 
 
-//get all posts, include their user data
+//get all posts, include their user & comment data
 router.get('/', (req, res) => {
-    Post.findAll({ include: User }).then((posts) => {
+    Post.findAll({ include: {all: true}}).then((posts) => {
         res.json(posts);
     });
 });
 
 //get 1 post, include their user data
 router.get('/:id', (req, res) => {
-    Post.findByPk(req.params.id, {include: User}).then((post) => {
+    Post.findByPk(req.params.id, {include: {all: true}}).then((post) => {
         res.json(post);
     });
 });
