@@ -11,7 +11,9 @@ router.get('/', (req, res) => {
     });
 });
 
+//post route will need user_id: req.session.user_id
 
+//needs to get the current post_id somehow. maybe from the browser url?
 
 
 
