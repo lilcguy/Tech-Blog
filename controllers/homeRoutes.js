@@ -48,8 +48,12 @@ router.get('/', (req, res) => {
       });
   
       const user = userData.get({ plain: true });
+      console.log(user);
+      console.log(req.session.user_id);
+
   
       res.render('dashboard', {
+       
         ...user,
         logged_in: true
       });
