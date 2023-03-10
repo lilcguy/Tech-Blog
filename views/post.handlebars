@@ -1,0 +1,13 @@
+<h1>INDIVIDUAL POST</h1>
+
+
+    <h1>Created on: {{post.date}}</h1>
+    <h1>{{post.user.name}}</h1>
+    <h1>{{post.title}}</h1>
+    <h1>{{post.contents}}</h1>
+
+    <h1>Comments</h1>
+        {{#each post.comments}}
+            <h2>{{this.contents}}</h2>
+        {{/each}}
+
