@@ -1,4 +1,4 @@
-# <Tech-Schmeck Blog>
+# Tech-Schmeck
 
 ## Description
 
