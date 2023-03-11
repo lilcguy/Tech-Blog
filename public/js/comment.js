@@ -22,7 +22,7 @@ const newCommentHandler = async (event) => {
         })
       });
 
-  
+      alert("Comment created. Refresh page.");
   
       if (!response.ok) {
         throw new Error('Failed to create new comment');
