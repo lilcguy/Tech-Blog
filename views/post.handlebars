@@ -8,6 +8,7 @@
 
     <h1>Comments</h1>
         {{#each post.comments}}
+            <h2>{{format_date this.date}}</h2>
             <h2>{{this.contents}}</h2>
         {{/each}}
 
