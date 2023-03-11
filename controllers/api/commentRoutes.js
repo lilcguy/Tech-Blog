@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
         
 
       });
-
+        
       console.log(newComment);
   
       res.redirect(req.originalUrl); 
