@@ -2,14 +2,16 @@
 
 
     <h1>Created on: {{format_date post.date}}</h1>
-    <h1>{{post.user.name}}</h1>
-    <h1>{{post.title}}</h1>
-    <h1>{{post.contents}}</h1>
+    <h1>By: {{post.user.name}}</h1>
+    <h1>Title: {{post.title}}</h1>
+    <h1>Contents: {{post.contents}}</h1>
 
     <h1>Comments</h1>
         {{#each post.comments}}
-            <h2>{{format_date this.date}}</h2>
-            <h2>{{this.contents}}</h2>
+            <h2>date: {{format_date this.date}}</h2>
+            <h2>user: {{this.user.name}}</h2>
+            
+            <h2>comment: {{this.contents}}</h2>
         {{/each}}
 
 

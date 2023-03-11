@@ -51,10 +51,12 @@ app.get('/public/js/comment.js', (req, res) => {
   res.set('Content-Type', 'application/javascript');
   res.sendFile(path.join(__dirname, 'public', 'js', 'comment.js'));
 });
-
-
 //--^ added to fix not working button. i have no explanation. not even a little.
 
+app.use('/public/css/style.css', (req, res, next) => {
+  res.type('text/css');
+  next();
+});
 
 
 app.use(routes); //tell express to use routes in controllers folder

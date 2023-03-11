@@ -1,17 +1,23 @@
 <h1>HOMEPAGE</h1>
 
 {{#each posts as |post|}}
-
+<div class="bg-border">
 <a href="/post/{{post.id}}">{{post.title}}</a>
-<h1>Created on: {{format_date post.date}}</h1>
-    <h1>{{post.user.name}}</h1>
+<p>Created on: {{format_date post.date}}</p>
+    <p>user: {{post.user.name}}</p>
     
-    <h1>{{post.contents}}</h1>
-    <h1>Comments</h1>
+    
+    
+   
+</div>        
+{{/each}} 
+
+<!-- a post needs an anchor with a link to its route-->
+
+<!-- safe keeping
+     <h1>Comments</h1>
         {{#each post.comments}}
         <h2>{{format_date this.date}}</h2>
         <h2>{{this.contents}}</h2>
         {{/each}}
-{{/each}} 
-
-<!-- a post needs an anchor with a link to its route-->
+-->

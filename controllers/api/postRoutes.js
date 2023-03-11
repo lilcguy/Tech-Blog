@@ -44,11 +44,29 @@ router.post('/', async (req, res) => {
   });
 
 //delete a post
-router.delete('/:id', (req, res) => {
-    Post.destroy({where: {id: req.params.id}}).then(
-        res.json("Destroyed post.")
+// router.delete('/:id', (req, res) => {
+//     Post.destroy({where: {id: req.params.id}}).then(
+//         res.json("Destroyed post.")
         
-        );
+//         );
+// });
+router.delete('/:id', async (req, res) => {
+  try {
+    const post = await Post.findByPk(req.params.id, {
+      include: [Comment] // include the associated Comment models
+    });
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+    // Delete all associated Comment models first
+    await Comment.destroy({ where: { post_id: req.params.id } });
+    // Then delete the Post model
+    await post.destroy();
+    res.json({ message: 'Post and associated comments deleted' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 
