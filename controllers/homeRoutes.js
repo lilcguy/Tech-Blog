@@ -46,10 +46,9 @@ router.get('/', (req, res) => {
         attributes: { exclude: ['password'] },
         include: [{ model: Post }],
       });
-  
+     
       const user = userData.get({ plain: true });
-      console.log(user);
-      console.log(req.session.user_id);
+      
 
   
       res.render('dashboard', {

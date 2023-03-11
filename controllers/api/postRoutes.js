@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 //     });
 // });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
       const newPostData = await Post.create({
         ...req.body,
@@ -45,7 +45,10 @@ router.post('/', withAuth, async (req, res) => {
 
 //delete a post
 router.delete('/:id', (req, res) => {
-    Post.destroy({where: {id: req.params.id}}).then((res.json("Destroyed post.")));
+    Post.destroy({where: {id: req.params.id}}).then(
+        res.json("Destroyed post.")
+        
+        );
 });
 
 

@@ -5,11 +5,16 @@
 <h1>Your posts:</h1>
 
 {{#each posts as |post|}}
+<div class="post-list">
     <a href="/post/{{post.id}}">{{post.title}}</a>
     <h1>Created on: {{format_date post.date}}</h1>
     <h1>{{post.title}}</h1>
     <h1>{{post.contents}}</h1>
+    <button class="btn btn-sm btn-danger" id="die" data-id="{{post.id}}">DELETE {{post.id}}</button>
+</div>
 {{/each}}
+
+
 
 <div class="row mt-4">
   <div class="col-md-6">
@@ -28,8 +33,10 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> 
 
 
 
-<script src="../public/js/dashboard.js"></script> <!-- link to frontend script for creating new posts/deleting-->
+<script type="module" src="/public/js/dashboard.js"></script>
+
+<!-- link to frontend script for creating new posts/deleting-->

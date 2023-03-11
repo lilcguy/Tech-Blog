@@ -40,6 +40,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//--V added to fix not working button. i have no explanation.
+app.get('/public/js/dashboard.js', (req, res) => {
+  res.set('Content-Type', 'text/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'delete.js'));
+});
+//--^ added to fix not working button. i have no explanation.
+
+
+
 app.use(routes); //tell express to use routes in controllers folder
 
 //sequelize sync on server start up and listen

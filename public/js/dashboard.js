@@ -1,5 +1,6 @@
 // //front-end javascript handling new posts created from the user's dashboard and deleting.
 
+//create
 const newPostHandler = async (event) => {
     event.preventDefault();
     
@@ -13,21 +14,24 @@ const newPostHandler = async (event) => {
       const response = await fetch('/api/posts/', {
         method: 'POST',
         body: JSON.stringify({ title, contents }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // },
         
       });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to create post.');
-      }
+
     }
   };
-  
+
+//delete
+
+
+
+
+
   document.querySelector('.new-post-form').addEventListener('submit', newPostHandler);
+
+
 
 
 
