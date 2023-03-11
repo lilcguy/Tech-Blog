@@ -21,6 +21,8 @@ const newCommentHandler = async (event) => {
             post_id: post_id
         })
       });
+
+  
   
       if (!response.ok) {
         throw new Error('Failed to create new comment');
