@@ -46,7 +46,14 @@ app.get('/public/js/dashboard.js', (req, res) => {
   res.set('Content-Type', 'text/javascript');
   res.sendFile(path.join(__dirname, 'public', 'js', 'delete.js'));
 });
-//--^ added to fix not working button. i have no explanation.
+
+app.get('/public/js/comment.js', (req, res) => {
+  res.set('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'public', 'js', 'comment.js'));
+});
+
+
+//--^ added to fix not working button. i have no explanation. not even a little.
 
 
 
